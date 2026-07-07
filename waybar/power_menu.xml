@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <menu id="power-menu">
+    <section>
+      <item>
+        <attribute name="label">Lock</attribute>
+        <attribute name="action">app.lock</attribute>
+      </item>
+      <item>
+        <attribute name="label">Suspend</attribute>
+        <attribute name="action">app.suspend</attribute>
+      </item>
+      <item>
+        <attribute name="label">Hibernate</attribute>
+        <attribute name="action">app.hibernate</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label">Reboot</attribute>
+        <attribute name="action">app.reboot</attribute>
+      </item>
+      <item>
+        <attribute name="label">Shutdown</attribute>
+        <attribute name="action">app.shutdown</attribute>
+      </item>
+    </section>
+  </menu>
+</interface>

@@ -1,0 +1,227 @@
+/* =========================================================
+   Waybar theme — Warm Neutral (matches subtle Hyprland borders)
+   ========================================================= */
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "FontAwesome";
+    font-size: 13px;
+    font-weight: 500;
+    min-height: 0;
+}
+
+/* -------------------- Palette --------------------
+   bg        #1c1a18   (warm near-black)
+   surface   #262320   (module background)
+   surface2  #34302b   (hover / active-adjacent)
+   text      #d8d2c9   (warm off-white)
+   muted     #8a8377   (dim icons/text)
+   accent    #b08968   (warm copper — the ONE accent color)
+   warn      #c9a35f   (muted amber)
+   crit      #b06a55   (muted rust-red, not a bright red)
+---------------------------------------------------- */
+
+window#waybar {
+    background: transparent;
+}
+
+.modules-left,
+/* .modules-center, */
+.modules-right {
+    background: rgba(28, 26, 24, 0.75);
+    border: 1px solid rgba(216, 210, 201, 0.06);
+    border-radius: 12px;
+    margin: 6px 4px;
+    padding: 0 4px;
+}
+
+#workspaces,
+#mode,
+#scratchpad,
+#custom-media,
+#window,
+#tray,
+#idle_inhibitor,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#temperature,
+#battery,
+#clock,
+#custom-power,
+#keyboard-state {
+    padding: 4px 12px;
+    margin: 5px 3px;
+    border-radius: 8px;
+    color: #d8d2c9;
+    background: transparent;
+    transition: background 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+#language {
+    color: #8a8377;
+    padding: 4px 10px;
+    margin: 5px 3px;
+    border-radius: 8px;
+    background: transparent;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+#tray,
+#idle_inhibitor,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#temperature,
+#battery {
+    background: rgba(255, 255, 255, 0.02);
+    color: #8a8377; /* dim by default — no per-module rainbow */
+}
+
+/* -------------------- Workspaces -------------------- */
+
+#workspaces {
+    padding: 3px 6px;
+    margin: 5px 4px;
+}
+
+#workspaces button {
+    padding: 0 9px;
+    margin: 0 2px;
+    border-radius: 6px;
+    color: #605a50;
+    background: transparent;
+    font-size: 14px;
+    transition: all 0.18s ease-in-out;
+}
+
+#workspaces button:hover {
+    background: rgba(176, 137, 104, 0.10);
+    color: #b08968;
+}
+
+#workspaces button.active {
+    background: rgba(176, 137, 104, 0.22);
+    color: #d8b89a;
+    min-width: 22px;
+}
+
+#workspaces button.urgent {
+    background: rgba(176, 106, 85, 0.3);
+    color: #d8a996;
+}
+
+/* -------------------- Mode / scratchpad -------------------- */
+
+#mode {
+    color: #b08968;
+    font-style: italic;
+}
+
+#scratchpad {
+    color: #8a8377;
+}
+
+/* -------------------- Media -------------------- */
+
+#custom-media {
+    color: #a89a86;
+}
+
+/* -------------------- Window title (center) -------------------- */
+
+/* #window {
+    color: #d8d2c9;
+    font-weight: 600;
+} */
+
+/* -------------------- Right modules: dim by default, warm only on states -------------------- */
+
+#idle_inhibitor.activated {
+    color: #c9a35f;
+}
+
+#pulseaudio.muted {
+    color: #55504a;
+}
+
+#network.disconnected {
+    color: #b06a55;
+}
+
+#temperature.critical {
+    color: #b06a55;
+    background: rgba(176, 106, 85, 0.12);
+}
+
+#battery.charging {
+    color: #a3a68a;
+}
+#battery.warning:not(.charging) {
+    color: #c9a35f;
+}
+#battery.critical:not(.charging) {
+    color: #b06a55;
+    background: rgba(176, 106, 85, 0.14);
+}
+
+/* -------------------- Clock — the single, quiet focal point -------------------- */
+
+#clock {
+    color: #d8b89a;
+    font-weight: 600;
+    padding: 4px 12px;
+    margin: 5px 6px;
+}
+
+/* -------------------- Tray -------------------- */
+
+#tray {
+    padding: 4px 10px;
+}
+#tray > .passive {
+    opacity: 0.5;
+}
+#tray > .needs-attention {
+    opacity: 1;
+    background: rgba(176, 106, 85, 0.18);
+}
+
+/* -------------------- Power button -------------------- */
+
+#custom-power {
+    color: #b06a55;
+    font-weight: 600;
+    padding: 4px 11px;
+    margin: 5px 6px 5px 3px;
+    transition: background 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+#custom-power:hover {
+    background: rgba(176, 106, 85, 0.15);
+    color: #d8a996;
+}
+
+/* -------------------- Keyboard state -------------------- */
+
+#keyboard-state {
+    color: #8a8377;
+}
+#keyboard-state label.locked {
+    color: #c9a35f;
+}
+
+/* -------------------- Tooltips -------------------- */
+
+tooltip {
+    background: #1c1a18;
+    border: 1px solid rgba(216, 210, 201, 0.10);
+    border-radius: 8px;
+}
+
+tooltip label {
+    color: #d8d2c9;
+    padding: 2px 4px;
+}
